@@ -52,6 +52,6 @@ public class EmpleadoController {
 	public String salir(HttpSession sesion) {
 		SecurityContextHolder.clearContext();
 		sesion.invalidate();
-		return "redirect:/";
+		return "redirect:/home";
 	}
 }
