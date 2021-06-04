@@ -30,6 +30,7 @@ import com.proyecto.pac.models.service.IProductoService;
 
 
 @Controller
+
 public class ProductoController {
 	@Autowired
 	private IProductoService productoService;
@@ -44,7 +45,7 @@ public class ProductoController {
 		
  		model.addAttribute("titulo", "Lista de productos");
  		model.addAttribute("productos", listadoProductos);
-		return "productos/listar";
+		return "/productos/listar";
 		
 	}
 	
@@ -96,7 +97,7 @@ public class ProductoController {
 			
 			model.addAttribute("titulo","Detalle del producto: "+ producto.getNombrep());
 			model.addAttribute("productos", producto);
-			return "productos/detalle";
+			return "/productos/detalle";
 		}
 	  
 	  @GetMapping("/productos/edit/{idproducto}") 
@@ -128,7 +129,7 @@ public class ProductoController {
 				
 		 		model.addAttribute("titulo", "Lista de productos");
 		 		model.addAttribute("productos", listadoProductos);
-				return "productos/verproductos";
+				return "/productos/verproductos";
 				
 									
 			}

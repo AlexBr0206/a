@@ -4,9 +4,12 @@
 <meta charset="UTF-8">
 <title>Lista de productos</title>
 </head>
-<body>
+<body style = "background-color: rgb(228, 211, 211)">
 	<header th:replace="/fragmentos :: header"></header>
+	
+	
 	<div class = container>
+	<div class="card-header">
 	<h1 th:text="${titulo}"></h1>
 
 			<a class="btn btn-primary btn-sm" th:href="@{/productos/create}"
@@ -52,6 +55,7 @@
 			</tbody>
 		</table>
 		</div>
+	</div>
 	</div>
 	<footer  th:replace="plantilla/template :: footer"></footer>
 </body>
