@@ -19,6 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 					"/ubicanos/**",
 					"/images/**",
 					"/productos/verproductos/**",
+					"/productos/detalleproducto/**",
 					"/empleado/**",
 					"/empleado/validar/**"
 					).permitAll()
