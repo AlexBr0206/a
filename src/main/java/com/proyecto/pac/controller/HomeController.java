@@ -26,5 +26,16 @@ public class HomeController {
 	public String ubicanos() {
 		return "ubicanos";
 	}
+	
+	@GetMapping("list")
+	public String listarProductos(Model model) {
+		List<Productos> listadoProductos = productoService.listarTodos();
+		
+ 		model.addAttribute("titulo", "Lista de productos");
+ 		model.addAttribute("productos", listadoProductos);
+		return "listar";
+		
+	}
+	
 
 }
