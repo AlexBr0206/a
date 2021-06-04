@@ -27,7 +27,7 @@ public class HomeController {
 		return "ubicanos";
 	}
 	
-	@GetMapping("list")
+	@GetMapping("/list")
 	public String listarProductos(Model model) {
 		List<Productos> listadoProductos = productoService.listarTodos();
 		
