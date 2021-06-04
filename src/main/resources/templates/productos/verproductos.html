@@ -80,27 +80,8 @@
 			</tbody>
 		</table>
 		
-								<div class="col col-lg-3">
-								th:src="@{'/recursos/' + ${producto.imagen}}"
-						
-							<img id = "imgdetalle" class="img-thumbnail rounded float-left"
-						th:src="@{'/images/' + ${productos.imagen}}" 
-								th:alt="${productos.imagen}" style="max-width: 80%;">
-						</div>
+								
 				
-					
-						<div class= "col col-lg-9">
-							<ul class="list-group">
-								<li class="list-group-item"
-									th:text="'Nombre del producto: ' +${productos.nombrep}"></li>
-								<li class="list-group-item"
-									th:text="'Precio: ' +${productos.precio}"></li>
-								<li class="list-group-item"
-									th:text="'Descripcion: ' +${productos.descripcion}"></li>
-								<li class="list-group-item"
-									th:text="'Categoria: ' +${productos.categoria.nombrec}"></li>
-							</ul>
-						</div> 
 		</div>
 				
 		</div>		
