@@ -28,7 +28,7 @@ public class EmpleadoController {
 	public String agregar(@RequestParam("username") String correoe,
 			@RequestParam("password") String claveacceso,
 			Model modelo) {
-			return "redirect:/empleado/agregar";
+			return "redirect:/productos/list";
 	}
 	
 	@GetMapping("/empleado/agregar")
