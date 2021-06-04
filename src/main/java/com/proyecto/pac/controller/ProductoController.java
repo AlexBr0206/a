@@ -84,7 +84,7 @@ public class ProductoController {
 			productoService.guardar(producto);
 			System.out.println("Producto guardado con exito!");
 			attribute.addFlashAttribute("success", "Producto guardado con exito!");
-			return "redirect:/productos/listar";
+			return "redirect:/productos/list";
 		}
 	  
 		@GetMapping("/productos/detalle/{idproducto}")
@@ -117,7 +117,7 @@ public class ProductoController {
 		  productoService.eliminar(idProducto);
 		  System.out.println("Registro Eliminado con Exito!");
 		  attribute.addFlashAttribute("warning", "Registro eliminado con exito!");
-		  return "redirect:productos/listar";
+		  return "redirect:/productos/list";
 		  }
 	
 	  
