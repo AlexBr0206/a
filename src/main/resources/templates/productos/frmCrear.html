@@ -85,7 +85,7 @@
 								<div class="form-group col-md-12">
 									<label class="col-md-3" for="categoria">Categoria:</label> <select
 										th:field="*{categoria}"
-										class="form-control col-md-8 glyphicon glyphicon-triangle-bottom" id="categoria">
+										class="col-md-8 glyphicon glyphicon-triangle-bottom" id="categoria">
 										<option th:each="categoria:${categoria}" th:value="${categoria.idcategoria}"
 											th:text="${categoria.nombrec}" />
 										
