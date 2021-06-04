@@ -22,7 +22,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 					"/verproductos/**",
 					"/productos/listar/**",
 					"/empleado/**",
-					"/empleado/validar"
+					"/empleado/validar/**"
 					).permitAll()
 			.anyRequest().authenticated() //Cualquier otra ruta es con token
 			.and()
