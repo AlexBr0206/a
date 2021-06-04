@@ -20,7 +20,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 					"/images/**",
 					"/productos/verproductos/**",
 					"/verproductos/**",
-					"/productos/listar/**",
+					"/productos/list/**",
 					"/listar/**",
 					"/empleado/**",
 					"/empleado/validar/**"
