@@ -30,7 +30,7 @@ import com.proyecto.pac.models.service.IProductoService;
 
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/prodcutos")
 public class ProductoController {
 	@Autowired
 	private IProductoService productoService;
