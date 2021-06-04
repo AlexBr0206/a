@@ -1,27 +1,10 @@
 !DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace = "plantilla/template :: head">
 <meta charset="UTF-8">
 <title>Lista de productos</title>
-	
-<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
- <link rel="stylesheet" th:href="@{/css/estilos.css}">
+	<h1> Hola </H1>
 
 </head>
-<body style = "background-color: rgb(228, 211, 211)">
-	<header th:replace="/fragmentos :: header"></header>
-	
-	
-	<div class = container>
-	<div class="card-header">
-	<h1 th:text="${titulo}"></h1>
 
-			<a class="btn btn-primary btn-sm" th:href="@{/productos/create}"
-			th:text="'Nuevo Producto'" title="Crear Nuevo Registro"> </a>
-	
-	</div>
-	</div>
-	<footer  th:replace="plantilla/template :: footer"></footer>
 </body>
 </html>
