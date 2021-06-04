@@ -85,7 +85,7 @@
 								<div class="form-group col-md-12">
 									<label class="col-md-3" for="categoria">Categoria:</label> <select
 										th:field="*{categoria}"
-										class="col-md-8 glyphicon glyphicon-triangle-bottom" id="categoria">
+										class="col-md-8" id="categoria">
 										<option th:each="categoria:${categoria}" th:value="${categoria.idcategoria}"
 											th:text="${categoria.nombrec}" />
 										
@@ -96,14 +96,14 @@
 									<input type="hidden" th:field="*{idproducto}"> <label
 										class="col-md-3" for="nombrep">Nombre:</label> <input
 										type="text" th:field="*{nombrep}"
-										class="col-md-8 form-control form-control-sm " id="nombrep"
+										class="col-md-8" id="nombrep"
 										placeholder="Nombre del Producto" required="required">
 								</div>
 							
 								<div class="form-group col-md-12">
 									<label class="col-md-3" for="precio">Precio:</label> <input
 										type="number" th:field="*{precio}"
-										class="form-control form-control-sm col-md-8" id="precio"
+										class="col-md-8" id="precio"
 										placeholder="Precio del producto" required="required">
 								</div>
 						
@@ -121,7 +121,7 @@
 								<div class="form-group col-md-12">
 									<label class="col-md-3" for="imagen">Imagen:</label> <input
 										type="file" name="file"
-										class="form-control form-control-sm col-md-8" id="imagen">
+										class="col-md-8" id="imagen">
 								</div>
 						
 						
