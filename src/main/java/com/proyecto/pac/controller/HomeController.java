@@ -1,9 +1,13 @@
 package com.proyecto.pac.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.proyecto.pac.models.entity.Productos;
+import com.proyecto.pac.models.service.IProductoService;
+
 
 import java.util.List;
 
