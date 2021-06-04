@@ -1,1 +1,118 @@
 
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<meta charset="UTF-8">
+<title>Detalle del Producto</title>
+	
+ <link rel="stylesheet" th:href="@{/css/estilos.css}">
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 
+
+</head>
+<body style = "background-color: rgb(228, 211, 211)">
+
+	<!-- Barra de navegacion -->
+	<!-- Barra de navegacion -->
+	<header th:fragment="header">
+       <div class="container">                
+                    <h1>Productos Artesanales Cázares <small class="text-muted">        
+                    <br>Vinos, sidras y más</small> </h1>
+             </div>
+            </div>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class = "container">
+				<p><strong> P A C</strong></p>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				
+				<!-- Enlaces del menú -->
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						
+					</ul>
+				</div>
+					<div class= "form-group">
+							
+								
+		
+					<ul class="nav navbar-nav navbar-right">
+       			
+       			  <li class="nav-item"><a class="nav-link" th:href="@{/empleado/agregar}"><span class="glyphicon glyphicon-user"></span>  Nuevo Empleado</a></li>
+       			  
+       			   <li class="nav-item"><a class="nav-link" th:href="@{/empleado/salir}"><span class="glyphicon glyphicon-log-out"></span> Cerrar Sesión</a></li>
+      		</ul>
+			</div>
+			
+		
+		</nav>
+		
+		<!-- Mensaje -->
+		<div class="alert alert-success alert-dismissible"  th:if="${success != null}">
+			<label th:text="${success}"></label>
+			<button type="button" class="close" data-dismiss="alert">
+			    <span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+				<div class="alert alert-warning alert-dismissible " th:if="${warning != null}">
+			<label th:text="${warning}"></label>
+			<button type="button" class="close" data-dismiss="alert">
+			<span aria-hidden="true">&times;</span>
+			</button>	
+			
+		</div>
+	</header>
+	<!-- Contenido -->
+<div class=container>
+		<div class="row">
+
+			<div class="card bg-light ">
+				<div class="card-header bg-dark text-white text-center text-uppercase" th:text="${titulo}"></div>
+				  <div class="card-body">
+					<div class="row">
+					
+						<div class="col col-lg-3">
+						<!-- 		th:src="@{'/recursos/' + ${producto.imagen}}" -->
+						
+							<img id = "imgdetalle" class="img-thumbnail rounded float-left"
+						th:src="@{'/images/' + ${productos.imagen}}" 
+								th:alt="${productos.imagen}" style="max-width: 80%;">
+						</div>
+				
+					
+						<div class= "col col-lg-9">
+							<ul class="list-group">
+								<li class="list-group-item"
+									th:text="'Nombre del producto: ' +${productos.nombrep}"></li>
+								<li class="list-group-item"
+									th:text="'Precio: ' +${productos.precio}"></li>
+								<li class="list-group-item"
+									th:text="'Descripcion: ' +${productos.descripcion}"></li>
+								<li class="list-group-item"
+									th:text="'Categoria: ' +${productos.categoria.nombrec}"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  
+	<!-- Pie de pagina -->
+	<footer th:fragment="footer" class="bg-dark text-white text-center">
+
+		<div class="container">
+			<p>Copyright Alex &copy; -2021</p>
+		</div>
+
+		<script type="text/javascript" th:src="@{/js/jquery-3.6.0.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+	</footer>
+</body>
