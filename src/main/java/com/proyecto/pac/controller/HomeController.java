@@ -27,13 +27,13 @@ public class HomeController {
 		return "ubicanos";
 	}
 	
-	@GetMapping("/list")
+	@GetMapping("/listarProductos")
 	public String listarProductos(Model model) {
 		List<Productos> listadoProductos = productoService.listarTodos();
 		
  		model.addAttribute("titulo", "Lista de productos");
  		model.addAttribute("productos", listadoProductos);
-		return "listar";
+		return "listarProductos";
 		
 	}
 	
