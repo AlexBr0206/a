@@ -15,16 +15,15 @@
 <body style = "background-color: rgb(228, 211, 211)">
 
 	<!-- Barra de navegacion -->
-	<!-- Barra de navegacion -->
-	<header th:fragment="header">
+		<header th:fragment="header">
        <div class="container">                
                     <h1>Productos Artesanales Cázares <small class="text-muted">        
                     <br>Vinos, sidras y más</small> </h1>
              </div>
-            </div>
+           
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div class = "container">
-				<p><strong> P A C</strong></p>
+				<a class="navbar-brand" href="#"><strong> P A C</strong></a>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 					aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -35,38 +34,22 @@
 				<!-- Enlaces del menú -->
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" th:href="@{/home}"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/productos/verproductos}"> <span class="glyphicon glyphicon-shopping-cart"></span> Productos</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/ubicanos}"> <span class="glyphicon glyphicon-map-marker"></span> Ubicanos</a></li>
 					</ul>
 				</div>
-					<div class= "form-group">
-							
-								
-		
+				
 					<ul class="nav navbar-nav navbar-right">
-       			
-       			  <li class="nav-item"><a class="nav-link" th:href="@{/empleado/agregar}"><span class="glyphicon glyphicon-user"></span>  Nuevo Empleado</a></li>
-       			  
-       			   <li class="nav-item"><a class="nav-link" th:href="@{/empleado/salir}"><span class="glyphicon glyphicon-log-out"></span> Cerrar Sesión</a></li>
+       			 <li class="nav-item"><a class="nav-link" th:href="@{/empleado/validar}"><span class="glyphicon glyphicon-log-in"></span> Acceder</a></li>
       		</ul>
 			</div>
 			
 		
 		</nav>
 		
-		<!-- Mensaje -->
-		<div class="alert alert-success alert-dismissible"  th:if="${success != null}">
-			<label th:text="${success}"></label>
-			<button type="button" class="close" data-dismiss="alert">
-			    <span aria-hidden="true">&times;</span>
-			</button>
-		</div>
-				<div class="alert alert-warning alert-dismissible " th:if="${warning != null}">
-			<label th:text="${warning}"></label>
-			<button type="button" class="close" data-dismiss="alert">
-			<span aria-hidden="true">&times;</span>
-			</button>	
-			
-		</div>
+	
 	</header>
 	<!-- Contenido -->
 <div class=container>
