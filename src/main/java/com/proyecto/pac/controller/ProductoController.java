@@ -97,6 +97,19 @@ public class ProductoController {
 			model.addAttribute("productos", producto);
 			return "productos/detalle";
 		}
+	
+	
+		@GetMapping("/productos/detalleproducto/{idproducto}")
+		public String detalle(@PathVariable("idproducto") Integer idproducto, Model model,
+				RedirectAttributes attribute) {
+			
+			Productos producto = productoService.buscarPorId(idproducto); 
+			
+			model.addAttribute("titulo","Detalle del producto: "+ producto.getNombrep());
+			model.addAttribute("productos", producto);
+			return "productos/detalleproducto";
+		}
+		
 	  
 	  @GetMapping("/productos/edit/{idproducto}") 
 	  public String editar(@PathVariable("idproducto") Integer idProducto, Model model,
