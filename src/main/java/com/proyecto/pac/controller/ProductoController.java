@@ -43,7 +43,7 @@ public class ProductoController {
 		
  		model.addAttribute("titulo", "Lista de productos");
  		model.addAttribute("productos", listadoProductos);
-		return "/productos/listar";
+		return "productos/listar";
 		
 	}
 	
@@ -95,7 +95,7 @@ public class ProductoController {
 			
 			model.addAttribute("titulo","Detalle del producto: "+ producto.getNombrep());
 			model.addAttribute("productos", producto);
-			return "/productos/detalle";
+			return "productos/detalle";
 		}
 	  
 	  @GetMapping("/productos/edit/{idproducto}") 
@@ -117,7 +117,7 @@ public class ProductoController {
 		  productoService.eliminar(idProducto);
 		  System.out.println("Registro Eliminado con Exito!");
 		  attribute.addFlashAttribute("warning", "Registro eliminado con exito!");
-		  return "redirect:/productos/listar";
+		  return "redirect:productos/listar";
 		  }
 	
 	  
