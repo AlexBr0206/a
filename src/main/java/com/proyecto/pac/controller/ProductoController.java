@@ -127,7 +127,7 @@ public class ProductoController {
 				
 		 		model.addAttribute("titulo", "Lista de productos");
 		 		model.addAttribute("productos", listadoProductos);
-				return "/productos/verproductos";
+				return "productos/verproductos";
 				
 									
 			}
