@@ -69,7 +69,7 @@
 			<tbody>
 				<tr th:each="cl:${productos}">
 					<td>
-						<a th:href="@{/productos/detalle/}+${cl.idproducto}"
+						<a th:href="@{/productos/detalleproducto/}+${cl.idproducto}"
 						>
 					<img id = "imgdetalle" class="img-thumbnail rounded float-left"
 						th:src="@{'/images/' + ${cl.imagen}}" 
