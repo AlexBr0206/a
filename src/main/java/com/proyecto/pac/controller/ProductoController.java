@@ -30,7 +30,6 @@ import com.proyecto.pac.models.service.IProductoService;
 
 
 @Controller
-@RequestMapping("/productos")
 public class ProductoController {
 	@Autowired
 	private IProductoService productoService;
@@ -39,7 +38,7 @@ public class ProductoController {
 	private ICategoriaService categoriaService;
 	
 	
-	@GetMapping("/")
+	@GetMapping("/productos/listar")
 	public String listarProductos(Model model) {
 		List<Productos> listadoProductos = productoService.listarTodos();
 		
@@ -51,7 +50,7 @@ public class ProductoController {
 	
 
 	
-	  @GetMapping("/create") 
+	  @GetMapping("/productos/create") 
 	  public String crear(Model model,  HttpSession sesion ) {	  
 	  Productos productos = new Productos(); 
 	  List<Categoria> listCategorias = categoriaService.listaCategoria();
@@ -62,25 +61,15 @@ public class ProductoController {
 	  return "productos/frmCrear"; 
 	  }
 	  
-	  
-		/*
-		 * @PostMapping("/save") public String guardar(@ModelAttribute Productos
-		 * producto, Model model, RedirectAttributes attributes) {
-		 * productoService.guardar(producto);
-		 * attributes.addFlashAttribute("success","Producto guardado con exito!");
-		 * return "redirect:/productos/";
-		 * }
-		 */
-	  
-		@PostMapping("/save")
+	 
+		@PostMapping("/productos/save")
 		public String guardar(@Valid @ModelAttribute Productos producto, BindingResult result, Model model,
 				@RequestParam("file") MultipartFile imagen, RedirectAttributes attribute) {
 			
 			if(!imagen.isEmpty()) {
 				Path directorioImagenes = Paths.get("src//main//resources//static/images");
 				String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
-				
-				//String rutaAbsoluta = "C://Cliente//recursos";
+			
 				
 				try {
 					byte[] bytesImg = imagen.getBytes();
@@ -96,10 +85,10 @@ public class ProductoController {
 			productoService.guardar(producto);
 			System.out.println("Producto guardado con exito!");
 			attribute.addFlashAttribute("success", "Producto guardado con exito!");
-			return "redirect:/productos/";
+			return "redirect:/productos/listar";
 		}
 	  
-		@GetMapping("/detalle/{idproducto}")
+		@GetMapping("/productos/detalle/{idproducto}")
 		public String detalleProducto(@PathVariable("idproducto") Integer idproducto, Model model,
 				RedirectAttributes attribute) {
 			
@@ -110,7 +99,7 @@ public class ProductoController {
 			return "productos/detalle";
 		}
 	  
-	  @GetMapping("/edit/{idproducto}") 
+	  @GetMapping("/productos/edit/{idproducto}") 
 	  public String editar(@PathVariable("idproducto") Integer idProducto, Model model,
 			  RedirectAttributes attribute) {
 				  
@@ -124,20 +113,16 @@ public class ProductoController {
 				  return "productos/frmCrear";
 		}
 		
-		  @GetMapping("/delete/{id}") 
+		  @GetMapping("/productos/delete/{id}") 
 		  public String eliminar(@PathVariable("id") Integer idProducto,Model model ,RedirectAttributes attribute) {		
 		  productoService.eliminar(idProducto);
 		  System.out.println("Registro Eliminado con Exito!");
 		  attribute.addFlashAttribute("warning", "Registro eliminado con exito!");
-		  return "redirect:/productos/";
+		  return "redirect:/productos/listar";
 		  }
 	
-			@GetMapping({"/ubicanos"})
-			public String ubicanos() {
-				return "ubicanos";
-			}
 	  
-			@GetMapping({"/verproductos"})
+			@GetMapping({"/productos/verproductos"})
 			public String verproductos(Model model) {
 				List<Productos> listadoProductos = productoService.listarTodos();
 				
